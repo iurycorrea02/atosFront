@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button id="btn-open-modal-user" data-modal="open-modal-user" onclick="testeFunction()">Novo Registro</button>
+
+    <table id="table-users" border="2"></table>
+
+    <div class="modal" id="open-modal-user">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+            <header class="header-modal">
+                <button class="modal-close modal-exit">X</button>
+            </header>
+
+            <div>
+                <form id="form-user">
+                    <div>
+                        <label for="input-name">Nome:</label>
+                        <input 
+                            type="text" 
+                            id="input-name"
+                            name="name"
+                        />
+                    </div>
+
+                    <div>
+                        <span>Gêneros</span>
+                        <div>
+                            <label for="male">Masculino</label><br>
+                            <input 
+                                type="radio" 
+                                id="male" 
+                                name="gender" 
+                                value="Masculino"
+                            />
+                        </div>
+                        <div>
+                            <label for="female">Feminino</label><br>
+                            <input 
+                                type="radio" 
+                                id="female" 
+                                name="gender" 
+                                value="Feminino"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="input-email">Email:</label>
+                        <input 
+                            id="input-email" 
+                            type="text" 
+                            name="email" 
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label for="status-user">Selecione o status</label>
+                        <select id="status-user" name="status" required>
+                            <option value="active">Ativo</option>
+                            <option value="suspended">Suspenso</option>
+                            <option value="disabled">Desativado</option>
+                        </select>
+                    </div>
+                    <button id="btn-submit" type="submit">Criar usuário</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/createUser.js"></script>
+</body>
+
+</html>
